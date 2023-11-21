@@ -7,7 +7,83 @@
     <link rel="stylesheet" href="./assets/css/main.css"> 
     <title>Casino</title>
 </head>
-<body>
+<body onload="myClock(), myDate()" id="body">
+    <h1>Online Casino</h1>
+    <p>
+        <input type="text" id="fname" placeholder="Firstname">
+        <input type="text" id="lname" placeholder="Lastname">
+        <input type="button" value="Sir" onclick="sirClick()">
+        <input type="button" value="Madam" onclick="madamClick()">
+        <div id="username-output"></div>
+        <div id="error-message" style="color: red;"></div>
+    </p>
+
+
+    <p>
+        <div>Klockan är</div>
+        <div id="datum"> </div>
+        <div id="klockan"> </div>
+    </p>
+
+    <div class="dropdown-container">
+        <button class="knappen">
+            Byt färgtema
+        </button>
+        <div class="dropdown-menu">
+            <input type="range" min="1" max="255" value="255" class="sliders" id="slider-r">
+            <p><span id="value-r"></span></p>
+            <input type="range" min="1" max="255" value="255" class="sliders" id="slider-g">
+            <p><span id="value-g"></span></p>
+            <input type="range" min="1" max="255" value="255" class="sliders" id="slider-b">
+            <p><span id="value-b"></span></p>
+            <input type="button" value="Apply changes" id="button-color" onclick="changeColors()">
+            
+        </div>
+    </div>
+
+<!--
+    <div id="navigationMenu">
+        <button id="openNavigation">
+            ☰ 
+        </button>
+        <div id="navigation">
+            <p>asdad</p>
+            <p>sdsd</p>
+        </div>
+    </div>
+-->
+
+    <ul id="länkarna">
+
+    </ul>
+    
+    
+
+    <select id="selectDay">
+        <option value="0">Söndag</option>
+        <option value="1">Måndag</option>
+        <option value="2">Tisdag</option>
+        <option value="3">Onsdag</option>
+        <option value="4">Torsdag</option>
+        <option value="5">Fredag</option>
+        <option value="6">Lördag</option>
+    </select>
+
+
+    <div id="thumbnails">
+        <img src="./assets/img/lightbox_images/bild_1_tumme.jpg" data-bigpic="./assets/img/lightbox_images/bild_1.jpg">
+        <img src="./assets/img/lightbox_images/bild_2_tumme.jpg" data-bigpic="./assets/img/lightbox_images/bild_2.jpg">
+        <img src="./assets/img/lightbox_images/bild_3_tumme.jpg" data-bigpic="./assets/img/lightbox_images/bild_3.jpg">
+        <img src="./assets/img/lightbox_images/bild_4_tumme.jpg" data-bigpic="./assets/img/lightbox_images/bild_4.jpg">
+        <img src="./assets/img/lightbox_images/bild_5_tumme.jpg" data-bigpic="./assets/img/lightbox_images/bild_5.jpg">
+        <img src="./assets/img/lightbox_images/bild_6_tumme.jpg" data-bigpic="./assets/img/lightbox_images/bild_6.jpg">
+    </div>
+
+    <div id="lightbox">
+        <img> 
+        <span id="closeLightbox"><img src="./assets/img/52-521935_close-button-png-4146178793.png"> </span> 
+    </div>
+
     
     <script src="./assets/js/main.js"></script>
 </body>
