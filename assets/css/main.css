@@ -1,15 +1,22 @@
 /* Site-wide styling here */
 body {
     background-color: cornsilk; /* Bara för att testa, ÄNDRA eller ta bort! */
+    margin: 0px;
 }
 
 h1 {
     font-size: 50px;
 }
 
+#navBar {
+    background-color: rgb(88, 88, 88);
+    display: flex;
+    padding: 10px;
+}
+
 
 .knappen {
-    background-color: burlywood;
+    background-color: rgb(155, 155, 155);
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -17,7 +24,7 @@ h1 {
     position: relative;
 }
 .knappen:hover {
-    background-color: blanchedalmond;
+    background-color: rgb(204, 204, 204);
 }
 
 .dropdown-menu {
@@ -26,7 +33,7 @@ h1 {
     align-items: center;
     width: fit-content;
     flex-direction: column;
-    background-color:lightslategray;
+    background-color:rgb(88, 88, 88);
     visibility: hidden;
     opacity: 0;
 }
@@ -117,22 +124,33 @@ h1 {
 #navigationButton {
     font-size: large;
     cursor: pointer;
-    background-color: azure;
+    background-color:rgb(155, 155, 155);
+}
+#navigationMenu {
+    width: 90%;
 }
 
 #navigationContent {
     display: none;
-    position: absolute;
+    position: relative;
     z-index: 1;
-    background-color: azure;
-    min-width: max-content;
+    background-color: rgb(88, 88, 88);
+    width: 100%;
 }
 
 #navigationContent ul li {
     padding-top: 3px;
-    margin: 5px;
+    margin-bottom: 0px;
+    list-style-type: none;
 }
 
-#navigationContent ul:hover {
+#navigationContent ul li:hover {
     cursor: pointer;
+    background-color: rgb(112, 112, 112);
+}
+
+#navigationContent ul {
+    margin: 0;
+    margin-bottom: 3px;
+    padding-left: 0;
 }
