@@ -102,3 +102,37 @@ h1 {
     cursor: pointer;
     opacity: 0.5;
 }
+
+
+#navigationMenu {
+    position: relative;
+    display: inline-block;
+}
+
+/* #navigationMenu:hover #navigationContent {
+    display: block;
+} */
+
+
+#navigationButton {
+    font-size: large;
+    cursor: pointer;
+    background-color: azure;
+}
+
+#navigationContent {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: azure;
+    min-width: max-content;
+}
+
+#navigationContent ul li {
+    padding-top: 3px;
+    margin: 5px;
+}
+
+#navigationContent ul:hover {
+    cursor: pointer;
+}

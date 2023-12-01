@@ -69,18 +69,33 @@ function myDate() {
 }
 
 
+//navigation dropdown
+
+function openNav () {
+    document.querySelector("#navigationContent").style = "display: block;";
+}
+
+function closeNav (){
+    document.querySelector("#navigationContent").style = "display: none;";
+}
+
+window.addEventListener('click', (evt) => {
+    if (evt.target !== navigationButton) {
+        closeNav();
+    }
+});
+
+
 const länkarna = [
-    {destination: "home",                  länk: "../index.html"},
+    {destination: "home",                  länk: ""},
     {destination: "rock, paper, scissors", länk: ""},
     {destination: "memory-game",           länk: ""},
 ];
 
 for (const link of länkarna) {
     document.querySelector("#länkarna").innerHTML += `
-    <li><a href="${link.länk}">${link.destination} </a>" </li>`
-    console.log(link.länk)
+    <li>${link.destination} länken här <spansrc="${link.länk}"></span>" </li>`
 }
-
 
 
 //dropdown till färgslider
