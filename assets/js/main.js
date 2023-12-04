@@ -47,14 +47,6 @@ function myClock() {
     let second = today.getSeconds();
     document.querySelector("#klockan").innerHTML = `${hour}:${minute}:${second}`;
 
-    /*if (second < 10) {
-        i = "0" + i;
-        return i;
-    }
-    if (minute < 10) {
-        j = "0" + j;
-        return j;
-    }*/
 
 
 }
@@ -67,6 +59,60 @@ function myDate() {
     let day = date.getDate();
     document.querySelector("#datum").innerHTML = `${day}.${month + 1}.${year}`;
 }
+
+
+window.addEventListener("load", function () {
+    let selectDayElement = document.querySelector("#selectDay");
+    let currentDay = new Date();
+
+    // Set the initial value of the select box to the current day
+    selectDayElement.value = currentDay.getDay().toString();
+
+    let selectedDay = selectDayElement.value;
+
+document.querySelector("#selectDay").addEventListener("change", function (event) {
+    selectedDay = event.target.value;
+    websiteStatus(selectedDay);
+});
+
+function websiteStatus(selectedDay) {
+    const weekDay = parseInt(selectedDay);
+    const daysOpen = [1, 2, 3, 4, 5];
+
+    const openWebsite = daysOpen.includes(weekDay);
+
+    if (openWebsite) {
+        alert("website is open");
+    } else {
+        let untilOpen;
+
+        if (currentDay.getDay() === 6) {
+            untilOpen = 1;
+        } else if (currentDay.getDay() === 0) {
+            untilOpen = 2;
+        } else {
+            untilOpen = 0;
+        }
+
+        currentDay.setDate(currentDay.getDate() - currentDay.getDay() + parseInt(selectedDay));
+
+        let monday = new Date(currentDay);
+        monday.setDate(currentDay.getDate() + untilOpen);
+        monday.setHours(0, 0, 0, 0);
+
+        const timer = monday - currentDay;
+
+        const hours = Math.floor(timer / (1000 * 60 * 60));
+        const minutes = Math.floor((timer % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timer % (1000 * 60)) / 1000);
+
+        alert("website is closed " + hours + ":" + minutes + ":" + seconds);
+    }
+}
+
+websiteStatus(selectedDay);
+});
+
 
 
 function openNav () {
