@@ -74,8 +74,11 @@ function openNav () {
     console.log("click")
 }
 
-window.addEventListener('click', () => {
-    if (document.querySelector("#navigationContent").style.display === "block")
+window.addEventListener('click', (evt) => {
+    const navigationContent = document.querySelector("#navigationContent");
+    const navigationButton = document.querySelector("#navigationButton");
+    
+    if (evt.target !== navigationButton && navigationContent.style.display === "block")
     {
          document.querySelector("#navigationContent").style = "display: none;";
          console.log("klick")
