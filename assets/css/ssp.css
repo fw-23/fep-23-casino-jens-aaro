@@ -2,3 +2,39 @@
 body {
     background-color: teal; /* Bara för att testa, ÄNDRA eller ta bort! */
 }
+
+#vale{
+    display: block;
+    font-size:x-large;
+    margin-left: 2vw ;
+}
+
+#game{
+    display:flex;
+    height: 4vw;
+    
+}
+#börjar{
+    height: 2vw;
+    width: 4vw;
+    margin-top: 3vw;
+    margin-left: 2.5vw;
+}
+#house{
+    margin-left: 5vw;
+    padding-top: 0;
+    
+}
+#placeholder{
+    margin-top: -1vw;
+    height: 4vw;
+    width: 7vw;
+}
+h3{
+    margin-top: 0;
+}
+#resultat{
+    margin-left: 2vw;
+    margin-top: 2vw;
+}
+
