@@ -133,8 +133,8 @@ window.addEventListener('click', (evt) => {
 })
 
 const länkarna = [
-    {destination: "home",                  länk: "#"},
-    {destination: "rock, paper, scissors", länk: "../../pages/ssp.html"},
+    {destination: "home",                  länk: "../pages/home.html"},
+    {destination: "rock, paper, scissors", länk: "../pages/ssp.html"},
     {destination: "memory-game",           länk: "#"},
 ];
 
