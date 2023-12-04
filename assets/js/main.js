@@ -69,6 +69,13 @@ function myDate() {
 }
 
 
+
+
+
+
+
+
+
 const länkarna = [
     {destination: "home",                  länk: "../index.html"},
     {destination: "rock, paper, scissors", länk: ""},
