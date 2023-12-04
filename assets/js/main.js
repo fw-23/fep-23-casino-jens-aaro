@@ -133,14 +133,31 @@ window.addEventListener('click', (evt) => {
 })
 
 const länkarna = [
-    {destination: "home",                  länk: ""},
-    {destination: "rock, paper, scissors", länk: ""},
-    {destination: "memory-game",           länk: ""},
+    {destination: "home",                  länk: "#"},
+    {destination: "rock, paper, scissors", länk: "../../pages/ssp.html"},
+    {destination: "memory-game",           länk: "#"},
 ];
 
 for (const link of länkarna) {
     document.querySelector("#länkarna").innerHTML += `
-    <li>${link.destination} länken här <spansrc="${link.länk}"></span>" </li>`
+   <li>
+    <a data-länk="${link.länk}" href="#">${link.destination}</a>
+  </li>` 
+}
+//<li>${link.destination} länken här <span src="${link.länk}"></span></li>
+
+document.querySelector('#navigationContent').addEventListener('click', (evt) => {
+    if (evt.target.localName !== "a") return;
+    evt.preventDefault();
+    console.log(evt.target.dataset.link);
+    changeContent(evt.target.dataset.link);
+});
+ 
+changeContent("../../pages/ssp.html");
+ async function changeContent(länk) {
+    const req = await fetch(`${länk}`)
+    const content = await req.text();
+    document.querySelector('#articleContent').innerHTML = content;
 }
 
 
