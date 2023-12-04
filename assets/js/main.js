@@ -149,11 +149,11 @@ for (const link of länkarna) {
 document.querySelector('#navigationContent').addEventListener('click', (evt) => {
     if (evt.target.localName !== "a") return;
     evt.preventDefault();
-    console.log(evt.target.dataset.link);
-    changeContent(evt.target.dataset.link);
+    console.log(evt.target.dataset.länk);
+    changeContent(evt.target.dataset.länk);
 });
  
-changeContent("../../pages/ssp.html");
+changeContent();
  async function changeContent(länk) {
     const req = await fetch(`${länk}`)
     const content = await req.text();
