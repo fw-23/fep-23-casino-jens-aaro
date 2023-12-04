@@ -135,16 +135,16 @@ window.addEventListener('click', (evt) => {
 const länkarna = [
     {destination: "home",                  länk: "../pages/home.html"},
     {destination: "rock, paper, scissors", länk: "../pages/ssp.html"},
-    {destination: "memory-game",           länk: "#"},
+    {destination: "memory-game",           länk: "../pages/memory.html"},
+    {destination: "gallery",               länk: "../pages/gallery.html"},
 ];
 
 for (const link of länkarna) {
     document.querySelector("#länkarna").innerHTML += `
    <li>
-    <a data-länk="${link.länk}" href="#">${link.destination}</a>
+    <a data-länk="${link.länk}" >${link.destination}</a>
   </li>` 
 }
-//<li>${link.destination} länken här <span src="${link.länk}"></span></li>
 
 document.querySelector('#navigationContent').addEventListener('click', (evt) => {
     if (evt.target.localName !== "a") return;
@@ -153,7 +153,7 @@ document.querySelector('#navigationContent').addEventListener('click', (evt) => 
     changeContent(evt.target.dataset.länk);
 });
  
-changeContent();
+changeContent("../pages/home.html");
  async function changeContent(länk) {
     const req = await fetch(`${länk}`)
     const content = await req.text();
@@ -222,19 +222,4 @@ if (r < 15 || g < 15 || b < 15) {
 });
 
 
-//lightbox script
-document.querySelector("#lightbox").style.display = "none"
 
-document.querySelectorAll("#thumbnails img").forEach((elem) => {
-    elem.addEventListener('click', () => openLightbox(elem))
-});
-
-function openLightbox(elem) {
-    const bigPic = elem.dataset.bigpic;
-    document.querySelector("#lightbox img").src = bigPic;
-    document.querySelector('#lightbox').style.display = "flex";
-}
-
-document.querySelector("#lightbox span").addEventListener('click', () => {
-    document.querySelector("#lightbox").style.display = "none"
-});

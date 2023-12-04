@@ -154,3 +154,12 @@ h1 {
     margin-bottom: 3px;
     padding-left: 0;
 }
+
+
+#lightbox {
+    display: none;
+}
+
+#lightbox.sjow {
+    display: flex;
+}
