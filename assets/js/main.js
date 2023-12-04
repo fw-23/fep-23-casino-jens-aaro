@@ -69,29 +69,11 @@ function myDate() {
 }
 
 
-<<<<<<< HEAD
 
 
 
 
 
-=======
-//navigation dropdown
-
-function openNav () {
-    document.querySelector("#navigationContent").style = "display: block;";
-}
-
-function closeNav (){
-    document.querySelector("#navigationContent").style = "display: none;";
-}
-
-window.addEventListener('click', (evt) => {
-    if (evt.target !== navigationButton) {
-        closeNav();
-    }
-});
->>>>>>> 71d86fde341cbc23f1a4d3e40a84d461b14fbc76
 
 
 const länkarna = [
