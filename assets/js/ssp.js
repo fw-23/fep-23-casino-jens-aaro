@@ -2,14 +2,21 @@
 
 console.log('ssp.js init'); // För att se att skriptet laddats in
 
-const houseplay = document.getElementById("houseplay")
+const houseplay = document.getElementById("#houseplay")
 
-const resultshow = document.getElementById("resultat")
+const resultshow = document.getElementById("#resultat")
+
+let bet = document.getElementById("#bet")
+
+
+// 1 står för sten
+// 2 står för sax
+// 3 står för påse
 
 const houseopt =[
-    "sten",
-    "sax",
-    "påse"
+    {name:"sten", wins:2,lose:3},
+    {name:"sax",wins:3, lose:1},
+    {name:"påse",wins:1,lose:2}
 
 ]
 
@@ -20,8 +27,22 @@ const result=[
     "Tie"
 ]
 function start(input){
-    const houseindex = Math.floor(Math.random() * (4 - 1) + 1);
-    console.log(houseindex)
+    const houseindex = Math.floor(Math.random() * (2 - (-1)) );
+    let houseout = houseopt[houseindex].name
+    document.querySelector("#houseplay").innerText=houseout;
+    
+    
+        if(houseopt[houseindex].wins==input){
+        document.querySelector("#resultat").innerText=result[1];
+        }
+   
+        if(houseopt[houseindex].lose==input){
+            document.querySelector("#resultat").innerText=result[0];
+        }
+    
+        else{
+        document.querySelector("#resultat").innerText=result[2];
+        }
 }
 
 
