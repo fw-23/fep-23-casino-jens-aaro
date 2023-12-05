@@ -39,9 +39,7 @@ function madamClick() {
 }
 
 //ålder och pengar
-/*
-let B;
-document.querySelector("#showmoney").innerText=0
+
 function check(){
 const age = document.querySelector("#age").value;
 let money = document.querySelector("#money").value;
@@ -54,10 +52,10 @@ else
 {
     document.querySelector("#age-error").innerText = ``
 }
-wat = localStorage.getItem("B");
-document.querySelector("#showmoney").innerText=wat;
+
+
 }
-*/
+
 
 //klocan
 function myClock() {
