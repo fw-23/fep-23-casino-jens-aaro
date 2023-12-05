@@ -22,6 +22,17 @@
             </div>
         </div>
 
+        <select id="selectDay">
+            <option value="0">Söndag</option>
+            <option value="1">Måndag</option>
+            <option value="2">Tisdag</option>
+            <option value="3">Onsdag</option>
+            <option value="4">Torsdag</option>
+            <option value="5">Fredag</option>
+            <option value="6">Lördag</option>
+        </select>
+
+
         <div class="dropdown-container">
             <button class="knappen">
                 Byt färgtema
@@ -41,59 +52,30 @@
     </nav>
 
 
-
-    <h1>Online Casino</h1>
-    <p>
-        <input type="text" id="fname" placeholder="Firstname">
-        <input type="text" id="lname" placeholder="Lastname">
-        <input type="button" value="Sir" onclick="sirClick()">
-        <input type="button" value="Madam" onclick="madamClick()">
-    <div id="username-output"></div>
-    <div id="error-message" style="color: red;"></div>
-    </p>
-
-
-    <p>
-    <div>Klockan är</div>
-    <div id="datum"> </div>
-    <div id="klockan"> </div>
-    </p>
+    <div id="site">
+        <h1>Online Casino</h1>
+        <p>
+            <input type="text" id="fname" placeholder="Firstname">
+            <input type="text" id="lname" placeholder="Lastname">
+            <input type="button" value="Sir" onclick="sirClick()">
+            <input type="button" value="Madam" onclick="madamClick()">
+        <div id="username-output"></div>
+        <div id="error-message" style="color: red;"></div>
+        </p>
 
 
-    <select id="selectDay">
-        <option value="0">Söndag</option>
-        <option value="1">Måndag</option>
-        <option value="2">Tisdag</option>
-        <option value="3">Onsdag</option>
-        <option value="4">Torsdag</option>
-        <option value="5">Fredag</option>
-        <option value="6">Lördag</option>
-    </select>
+        <p>
+        <div>Klockan är</div>
+        <div id="datum"> </div>
+        <div id="klockan"> </div>
+        </p>
 
-    <!--<div id="thumbnails">
-        <img src="../assets/img/lightbox_images/bild_1_tumme.jpg"
-            data-bigpic="../../assets/img/lightbox_images/bild_1.jpg">
-        <img src="../../assets/img/lightbox_images/bild_2_tumme.jpg"
-            data-bigpic="../../assets/img/lightbox_images/bild_2.jpg">
-        <img src="../../assets/img/lightbox_images/bild_3_tumme.jpg"
-            data-bigpic="../../assets/img/lightbox_images/bild_3.jpg">
-        <img src="../../assets/img/lightbox_images/bild_4_tumme.jpg"
-            data-bigpic="../../assets/img/lightbox_images/bild_4.jpg">
-        <img src="../../assets/img/lightbox_images/bild_5_tumme.jpg"
-            data-bigpic="../../assets/img/lightbox_images/bild_5.jpg">
-        <img src="../../assets/img/lightbox_images/bild_6_tumme.jpg"
-            data-bigpic="../../assets/img/lightbox_images/bild_6.jpg">
+
+
+
+
+        <article id="articleContent"> </article>
     </div>
-
-    <div id="lightbox">
-        <img>
-        <span id="closeLightbox"><img src="../../assets/img/52-521935_close-button-png-4146178793.png"> </span>
-    </div> -->
-
-
-
-    <article id="articleContent"> </article>
-
 
 
     <script src="./assets/js/main.js"></script>
