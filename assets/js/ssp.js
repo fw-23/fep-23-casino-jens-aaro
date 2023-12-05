@@ -14,9 +14,9 @@ let bet = document.getElementById("#bet")
 // 3 står för påse
 
 const houseopt =[
-    {name:"sten", wins:2,lose:3},
-    {name:"sax",wins:3, lose:1},
-    {name:"påse",wins:1,lose:2}
+    {name:"sten", wins:2, loss:3},
+    {name:"sax",wins:3, loss:1},
+    {name:"påse",wins:1, loss:2}
 
 ]
 
@@ -29,6 +29,8 @@ const result=[
 function start(input){
     const houseindex = Math.floor(Math.random() * (2 - (-1)) );
     let houseout = houseopt[houseindex].name
+    console.log(houseindex)
+    console.log(houseopt[houseindex])
     document.querySelector("#houseplay").innerText=houseout;
     
     
@@ -36,13 +38,16 @@ function start(input){
         document.querySelector("#resultat").innerText=result[1];
         }
    
-        if(houseopt[houseindex].lose==input){
-            document.querySelector("#resultat").innerText=result[0];
-        }
-    
         else{
-        document.querySelector("#resultat").innerText=result[2];
-        }
+            if(houseopt[houseindex].loss==input){
+            document.querySelector("#resultat").innerText=result[0];
+            }
+    
+            else{
+            document.querySelector("#resultat").innerText=result[2];
+            }
+            console.log(houseopt[houseindex])
+        }   
 }
 
 
