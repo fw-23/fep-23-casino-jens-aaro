@@ -13,27 +13,22 @@
 
     <div id="game">
 
-    <h3 style="font-size:x-large;">Spelare</h3>
-    <br>
-    <select id="vale">
-        <option name="playersten" type="radio" >
-        Sten</option>
-        <option name="playersax" type="radio" >
-        Sax</option>
-        <option name="playerpas" type="radio" >
-        Påse</option>
-    </select>
+    <h3 style="font-size:x-large;">Spelare -></h3>
+  
+    <button type="button" onclick="start(1)">Sten</button>
+    <button type="button" onclick="start(2)">Sax</button>
+    <button type="button" onclick="start(3)">Påse</button>
 
     <div id="house">
     <h3 style="font-size:x-large;">Mostståndare</h3>
     <h2 id="houseplay"></h2>
     </div>
 
-    <p id="resultat"></p>
+    <div id="resultat"></div>
     </div>
     
    
-    <button type="button" id="börjar" onclick="start()">Spela</button>
+    
 
 
     <script src="../assets/js/main.js"></script> <!-- importera main.js (OBS ../ )-->
