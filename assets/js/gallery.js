@@ -8,6 +8,7 @@ console.log('gallery.js init'); // För att se att skriptet laddats in
 document.querySelector("#articleContent").addEventListener('click', (evt) => {
     if (evt.target.localName == "img") {
         openLightbox(evt.target)
+        console.log("opening lightbox")
     }
     else {
         closeLightbox();

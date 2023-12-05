@@ -133,10 +133,10 @@ window.addEventListener('click', (evt) => {
 })
 
 const länkarna = [
-    { destination: "home", länk: "../pages/home.html" },
-    { destination: "rock, paper, scissors", länk: "../pages/ssp.html" },
-    { destination: "memory-game", länk: "../pages/memory.html" },
-    { destination: "gallery", länk: "../pages/gallery.html" },
+    { destination: "Home",                  länk: "../pages/home.html" },
+    { destination: "Rock, paper, scissors", länk: "../pages/ssp.html" },
+    { destination: "Memory-game",           länk: "../pages/memory.html" },
+    { destination: "Gallery",               länk: "../pages/gallery.html" },
 ];
 
 for (const link of länkarna) {

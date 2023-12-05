@@ -14,6 +14,10 @@ h1 {
     padding: 10px;
 }
 
+#selectDay {
+    max-height: 38px;
+    margin-right: 3px;
+}
 
 .knappen {
     background-color: rgb(155, 155, 155);
@@ -143,7 +147,7 @@ h1 {
     margin-bottom: 0px;
     list-style-type: none;
     color:lightgray;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: larger;
     
 }
