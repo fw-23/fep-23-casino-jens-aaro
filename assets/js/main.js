@@ -38,11 +38,12 @@ function madamClick() {
 }
 
 //ålder och pengar
+let B;
 document.querySelector("#showmoney").innerText=0
 function check(){
 const age = document.querySelector("#age").value;
 let money = document.querySelector("#money").value;
-localStorage.setItem("$", money);
+localStorage.setItem("B", money);
 if(age<18)
 {
     document.querySelector("#age-error").innerText = `Too Young To Play, Please Exist Webpage. `
@@ -51,7 +52,7 @@ else
 {
     document.querySelector("#age-error").innerText = ``
 }
-wat = localStorage.getItem("$");
+wat = localStorage.getItem("B");
 document.querySelector("#showmoney").innerText=wat;
 }
 
