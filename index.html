@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/main.css" > 
+    <link rel="stylesheet" href="./assets/css/main.css">
     <title>Casino</title>
 </head>
 
@@ -21,17 +21,6 @@
                 </ul>
             </div>
         </div>
-
-        <select id="selectDay">
-            <option value="0">Söndag</option>
-            <option value="1">Måndag</option>
-            <option value="2">Tisdag</option>
-            <option value="3">Onsdag</option>
-            <option value="4">Torsdag</option>
-            <option value="5">Fredag</option>
-            <option value="6">Lördag</option>
-        </select>
-
 
         <div class="dropdown-container">
             <button class="knappen">
@@ -49,32 +38,36 @@
             </div>
         </div>
 
+        <select id="selectDay">
+            <option value="0">Söndag</option>
+            <option value="1">Måndag</option>
+            <option value="2">Tisdag</option>
+            <option value="3">Onsdag</option>
+            <option value="4">Torsdag</option>
+            <option value="5">Fredag</option>
+            <option value="6">Lördag</option>
+        </select>
+
     </nav>
 
-<h1>Online Casino</h1>
+
+
     <div id="site">
         
-        <p>
-            <input type="text" id="fname" placeholder="Firstname">
-            <input type="text" id="lname" placeholder="Lastname">
-            <input type="button" value="Sir" onclick="sirClick()">
-            <input type="button" value="Madam" onclick="madamClick()">
-        <div id="username-output"></div>
-        <div id="error-message" style="color: red;"></div>
-        </p>
-
-
-        <p>
-        <div>Klockan är</div>
-        <div id="datum"> </div>
-        <div id="klockan"> </div>
-        </p>
-
-
-
-
+            <h1>Online Casino</h1>
+            <div id="theBox">
+                <div>Klockan är</div>
+                <div id="datum"> </div>
+                <div id="klockan"> </div>
+                <div id="username-output"></div>
+            </div>
 
         <article id="articleContent"> </article>
+
+        <footer id="footer">
+            Brought to you by Aaro and Jens
+        </footer>
+
     </div>
 
 

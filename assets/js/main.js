@@ -3,6 +3,7 @@
 console.log('main.js init'); // För att se att skriptet laddats in
 
 //username
+let loggedIn = false;
 function sirClick() {
     const fname = document.querySelector("#fname").value;
     const lname = document.querySelector("#lname").value;
@@ -13,12 +14,11 @@ function sirClick() {
     }
     else {
         document.querySelector("#error-message").innerText = ``
-        document.querySelector("#username-output").innerText = `Your username is Sir ${firstLetter}. ${lname}!`;
+        document.querySelector("#username-output").innerText = `Sir ${firstLetter}. ${lname}!`;
         const username = "Sir " + firstLetter + ". " + lname;
-        alert(`Welcome ${username}`);
+        alert(`Välkommen ${username}`);
+        loggedIn = true;
     }
-
-
 }
 
 function madamClick() {
@@ -31,9 +31,10 @@ function madamClick() {
     }
     else {
         document.querySelector("#error-message").innerText = ``
-        document.querySelector("#username-output").innerText = `Your username is Madam  ${firstLetter}. ${lname}!`;
+        document.querySelector("#username-output").innerText = `Madam  ${firstLetter}. ${lname}!`;
         const username = "Madam " + firstLetter + ". " + lname;
-        alert(`Welcome ${username}`);
+        alert(`Välkommen ${username}`);
+        loggedIn = true;
     }
 }
 
@@ -92,7 +93,7 @@ window.addEventListener("load", function () {
             } else if (currentDay.getDay() === 0) {
                 untilOpen = 2;
             }
-         
+
             currentDay.setDate(currentDay.getDate() - currentDay.getDay() + parseInt(selectedDay));
             let monday = new Date();
             monday.setDate(currentDay.getDate() + untilOpen);
@@ -133,10 +134,11 @@ window.addEventListener('click', (evt) => {
 })
 
 const länkarna = [
-    { destination: "Home",                  länk: "../pages/home.html" },
+    { destination: "Home", länk: "../pages/home.html" },
     { destination: "Rock, paper, scissors", länk: "../pages/ssp.html" },
-    { destination: "Memory-game",           länk: "../pages/memory.html" },
-    { destination: "Gallery",               länk: "../pages/gallery.html" },
+    { destination: "Memory-game", länk: "../pages/memory.html" },
+    { destination: "Gallery", länk: "../pages/gallery.html" },
+    { destination: "Logout", länk: "../pages/login.html" }
 ];
 
 for (const link of länkarna) {
@@ -146,13 +148,15 @@ for (const link of länkarna) {
   </li>`
 }
 
-document.querySelector('#navigationContent').addEventListener('click', (evt) => {
-    if (evt.target.localName !== "a") return;
-    console.log(evt.target.dataset.länk);
-    changeContent(evt.target.dataset.länk);
-});
 
-changeContent("../pages/home.html");
+    document.querySelector('#navigationContent').addEventListener('click', (evt) => {
+        if (evt.target.localName !== "a") return;
+        console.log(evt.target.dataset.länk);
+        changeContent(evt.target.dataset.länk);
+    });
+
+
+changeContent("../pages/login.html");
 async function changeContent(länk) {
     const req = await fetch(`${länk}`)
     const content = await req.text();
