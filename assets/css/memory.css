@@ -1,0 +1,13 @@
+.cell{
+    display:table-cell;
+    border:1px solid;
+    height: 100px;
+  }
+
+.container{
+    display:table;
+    
+}
+#back{
+height: 10vw;
+}
