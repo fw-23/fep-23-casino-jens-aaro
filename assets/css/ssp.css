@@ -4,8 +4,8 @@ body {
 }
 
 #vale{
-    display: block;
-    font-size:x-large;
+    height: fit-content;
+    font-size:large;
     margin-left: 2vw ;
 }
 
@@ -17,7 +17,7 @@ body {
 #börjar{
     height: 2vw;
     width: 4vw;
-    margin-top: 3vw;
+    margin-top: 1vw;
     margin-left: 2.5vw;
 }
 #house{
