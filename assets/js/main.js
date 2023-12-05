@@ -151,11 +151,11 @@ window.addEventListener('click', (evt) => {
 })
 
 const länkarna = [
-    { destination: "Home", länk: "../pages/home.html" },
-    { destination: "Rock, paper, scissors", länk: "../pages/ssp.html" },
-    { destination: "Memory-game", länk: "../pages/memory.html" },
-    { destination: "Gallery", länk: "../pages/gallery.html" },
-    { destination: "Logout", länk: "../pages/login.html" }
+    { destination: "Home", länk: "../../pages/home.html" },
+    { destination: "Rock, paper, scissors", länk: "../../pages/ssp.html" },
+    { destination: "Memory-game", länk: "../../pages/memory.html" },
+    { destination: "Gallery", länk: "../../pages/gallery.html" },
+    { destination: "Logout", länk: "../../pages/login.html" }
 ];
 
 for (const link of länkarna) {
@@ -174,7 +174,7 @@ for (const link of länkarna) {
     });
 
 
-changeContent("../pages/login.html");
+changeContent("../../pages/login.html");
 async function changeContent(länk) {
     const req = await fetch(`${länk}`)
     const content = await req.text();
