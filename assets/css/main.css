@@ -7,11 +7,21 @@ body {
 h1 {
     font-size: 50px;
 }
-
+#showmoney{
+    height: 2.9vw;
+    width: 4vw;
+    background-color: white;
+    margin-right: 0.5vw;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-left: 1.5vw;
+    
+}
 #navBar {
     background-color: rgb(88, 88, 88);
     display: flex;
     padding: 10px;
+    
 }
 
 #selectDay {

@@ -2,9 +2,9 @@
 
 console.log('ssp.js init'); // För att se att skriptet laddats in
 
-const houseplay = document.getElementById("houseplay")
+const houseplay = document.getElementById("#houseplay")
 
-const resultshow = document.getElementById("resultat")
+const resultshow = document.getElementById("#resultat")
 
 const houseopt =[
     "sten",
@@ -21,7 +21,7 @@ const result=[
 ]
 function start(input){
     const houseindex = Math.floor(Math.random() * (4 - 1) + 1);
-    console.log(houseindex)
+    console.log(houseopt[houseindex])
 }
 
 

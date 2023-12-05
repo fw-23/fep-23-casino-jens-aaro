@@ -21,6 +21,8 @@
                 </ul>
             </div>
         </div>
+        
+        <div id="showmoney"></div>
 
         <select id="selectDay">
             <option value="0">Söndag</option>
@@ -62,7 +64,13 @@
         <div id="username-output"></div>
         <div id="error-message" style="color: red;"></div>
         </p>
-
+        <p>
+            <input type="number" id="age" placeholder="Age">
+            <input type="number" id="money" placeholder="Amount">
+            <input type="button" value="Set" onclick="check()">
+            <div id="age-error" style="color: red;"></div>
+            
+        </p>
 
         <p>
         <div>Klockan är</div>
