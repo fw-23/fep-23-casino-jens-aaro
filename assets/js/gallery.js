@@ -22,7 +22,7 @@ function openLightbox(elem) {
     document.querySelector('#lightbox').style.display = "flex";
 }
 
-document.querySelector("#ligthbox").addEventListener('click', closeLightbox);
+//document.querySelector("#ligthbox").addEventListener('click', closeLightbox);
 
 function closeLightbox() {
     document.querySelector("#lightbox").style.display = "none";
