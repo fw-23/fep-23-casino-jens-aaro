@@ -65,96 +65,95 @@ window.addEventListener("load", function () {
     let selectDayElement = document.querySelector("#selectDay");
     let currentDay = new Date();
 
-    // Set the initial value of the select box to the current day
     selectDayElement.value = currentDay.getDay().toString();
 
     let selectedDay = selectDayElement.value;
 
-document.querySelector("#selectDay").addEventListener("change", function (event) {
-    selectedDay = event.target.value;
+    document.querySelector("#selectDay").addEventListener("change", function (event) {
+        selectedDay = event.target.value;
+        websiteStatus(selectedDay);
+    });
+
+    function websiteStatus(selectedDay) {
+        console.log(selectedDay)
+        const weekDay = parseInt(selectedDay);
+        const daysOpen = [1, 2, 3, 4, 5];
+
+        const openWebsite = daysOpen.includes(weekDay);
+
+        if (openWebsite) {
+            alert("website is open");
+            document.querySelector("#site").style = "display: block;"
+        } else {
+            let untilOpen = 0;
+
+            if (currentDay.getDay() === 6) {
+                untilOpen = 1;
+            } else if (currentDay.getDay() === 0) {
+                untilOpen = 2;
+            }
+         
+            currentDay.setDate(currentDay.getDate() - currentDay.getDay() + parseInt(selectedDay));
+            let monday = new Date();
+            monday.setDate(currentDay.getDate() + untilOpen);
+            monday.setHours(0, 0, 0, 0);
+            const timer = monday - currentDay;
+
+            console.log(monday, currentDay, timer)
+
+            const hours = Math.floor(timer / (1000 * 60 * 60));
+            const minutes = Math.floor((timer % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timer % (1000 * 60)) / 1000);
+
+            alert("website is closed " + hours + ":" + minutes + ":" + seconds);
+            document.querySelector("#site").style = "display: none;"
+        }
+    }
+
     websiteStatus(selectedDay);
 });
 
-function websiteStatus(selectedDay) {
-    const weekDay = parseInt(selectedDay);
-    const daysOpen = [1, 2, 3, 4, 5];
-
-    const openWebsite = daysOpen.includes(weekDay);
-
-    if (openWebsite) {
-        alert("website is open");
-    } else {
-        let untilOpen;
-
-        if (currentDay.getDay() === 6) {
-            untilOpen = 1;
-        } else if (currentDay.getDay() === 0) {
-            untilOpen = 2;
-        } else {
-            untilOpen = 0;
-        }
-
-        currentDay.setDate(currentDay.getDate() - currentDay.getDay() + parseInt(selectedDay));
-
-        let monday = new Date(currentDay);
-        monday.setDate(currentDay.getDate() + untilOpen);
-        monday.setHours(0, 0, 0, 0);
-
-        const timer = monday - currentDay;
-
-        const hours = Math.floor(timer / (1000 * 60 * 60));
-        const minutes = Math.floor((timer % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timer % (1000 * 60)) / 1000);
-
-        alert("website is closed " + hours + ":" + minutes + ":" + seconds);
-    }
-}
-
-websiteStatus(selectedDay);
-});
 
 
-
-function openNav () {
+function openNav() {
     document.querySelector("#navigationContent").style = "display: block;";
-    console.log("click")
 }
 
 window.addEventListener('click', (evt) => {
     const navigationContent = document.querySelector("#navigationContent");
     const navigationButton = document.querySelector("#navigationButton");
-    
-    if (evt.target !== navigationButton && navigationContent.style.display === "block")
-    {
-         document.querySelector("#navigationContent").style = "display: none;";
-         console.log("klick")
+
+    if (evt.target !== navigationButton && navigationContent.style.display === "block") {
+        setTimeout(() => {
+            document.querySelector("#navigationContent").style = "display: none;";
+            console.log("klick")
+        }, 50);
     }
-   
+
 })
 
 const länkarna = [
-    {destination: "home",                  länk: "../pages/home.html"},
-    {destination: "rock, paper, scissors", länk: "../pages/ssp.html"},
-    {destination: "memory-game",           länk: "../pages/memory.html"},
-    {destination: "gallery",               länk: "../pages/gallery.html"},
+    { destination: "home", länk: "../pages/home.html" },
+    { destination: "rock, paper, scissors", länk: "../pages/ssp.html" },
+    { destination: "memory-game", länk: "../pages/memory.html" },
+    { destination: "gallery", länk: "../pages/gallery.html" },
 ];
 
 for (const link of länkarna) {
     document.querySelector("#länkarna").innerHTML += `
    <li>
     <a data-länk="${link.länk}" >${link.destination}</a>
-  </li>` 
+  </li>`
 }
 
 document.querySelector('#navigationContent').addEventListener('click', (evt) => {
     if (evt.target.localName !== "a") return;
-    evt.preventDefault();
     console.log(evt.target.dataset.länk);
     changeContent(evt.target.dataset.länk);
 });
- 
+
 changeContent("../pages/home.html");
- async function changeContent(länk) {
+async function changeContent(länk) {
     const req = await fetch(`${länk}`)
     const content = await req.text();
     document.querySelector('#articleContent').innerHTML = content;
@@ -204,7 +203,7 @@ document.querySelector("#slider-b").addEventListener('input', (evt) => {
 });
 
 document.querySelector("#button-color").addEventListener('click', (event) => {
-   
+
     localStorage.setItem("r", r);
     localStorage.setItem("g", g);
     localStorage.setItem("b", b);
@@ -212,8 +211,8 @@ document.querySelector("#button-color").addEventListener('click', (event) => {
     document.body.style.backgroundColor = `
 rgb(${localStorage.getItem("r")}, ${localStorage.getItem("g")}, ${localStorage.getItem("b")})
 `;
-    
-if (r < 15 || g < 15 || b < 15) {
+
+    if (r < 15 || g < 15 || b < 15) {
         document.body.style.color = `white`;
     }
     else {

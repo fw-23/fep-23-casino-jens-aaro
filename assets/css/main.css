@@ -85,7 +85,7 @@ h1 {
 }
 
 #lightbox {
-    display: flex;
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -142,6 +142,10 @@ h1 {
     padding-top: 3px;
     margin-bottom: 0px;
     list-style-type: none;
+    color:lightgray;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: larger;
+    
 }
 
 #navigationContent ul li:hover {
@@ -160,6 +164,6 @@ h1 {
     display: none;
 }
 
-#lightbox.sjow {
+#lightbox.show {
     display: flex;
 }
