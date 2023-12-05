@@ -3,7 +3,7 @@
 console.log('main.js init'); // För att se att skriptet laddats in
 
 //username
-let loggedIn = false;
+
 function sirClick() {
     const fname = document.querySelector("#fname").value;
     const lname = document.querySelector("#lname").value;
@@ -39,6 +39,7 @@ function madamClick() {
 }
 
 //ålder och pengar
+/*
 let B;
 document.querySelector("#showmoney").innerText=0
 function check(){
@@ -56,7 +57,7 @@ else
 wat = localStorage.getItem("B");
 document.querySelector("#showmoney").innerText=wat;
 }
-
+*/
 
 //klocan
 function myClock() {
@@ -171,6 +172,7 @@ for (const link of länkarna) {
         if (evt.target.localName !== "a") return;
         console.log(evt.target.dataset.länk);
         changeContent(evt.target.dataset.länk);
+        console.log("click")
     });
 
 
