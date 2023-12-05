@@ -2,28 +2,38 @@
 
 console.log('ssp.js init'); // För att se att skriptet laddats in
 
-const player =document.getElementById("vale")
-
 const houseplay = document.getElementById("houseplay")
 
 const resultshow = document.getElementById("resultat")
 
-const ssp=[
-    {name:"sten",win:"sax",los:"pas"},
-    {name:"sax",win:"pas",los:"sten"},
-    {name:"pas",win:"sten",los:"sax"},
+const houseopt =[
+    "sten",
+    "sax",
+    "påse"
+
 ]
+
+
 const result=[
     "WIN",
     "Lose",
     "Tie"
 ]
-
-
-
-
-
-
-function start(){
-    result.innerHTML=result[player.selectedIndex]
+function start(input){
+    const houseindex = Math.floor(Math.random() * (4 - 1) + 1);
+    console.log(houseindex)
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
